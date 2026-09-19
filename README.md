@@ -9,6 +9,9 @@ OhMyGPU의 Runpod 기반 이미지·영상 생성 실습 자료입니다. 모델
 | 번호 | 유형 | 주제 | 모델·도구 | GPU | 검증일 | 확인된 결과 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 01 | 영상 | [5초 영상을 재생 시간에 가깝게 생성하기](recipes/video/01-minimax-h3-realtime/) | MiniMax H3 FL2VA · ComfyUI · NVENC | RTX PRO 6000 Blackwell × 1 | 2026-09-12 | 5.1667초 영상을 생성·저장 중앙값 5.492초 |
+| 02 | 영상 | [MiniMax H3를 1440p까지 생성하기](recipes/video/02-minimax-h3-1440p/) | MiniMax H3 T2V · Turbo 8-step | RTX PRO 6000 Blackwell × 1 | 2026-08-19 | 2560×1440 1회 생성 성공, 444.53초 |
+| 03 | 영상 | [LTX 2.5 해상도별 생성 시간 측정](recipes/video/03-ltx25-resolution-benchmark/) | LTX 2.5 T2V · ComfyUI | RTX PRO 6000 Blackwell × 1 | 2026-08-18 | 832×448~1984×1088, 각 5회 warm 중앙값 |
+| 04 | 영상 | [RTX PRO 6000 한 장에 ComfyUI 3개 띄우기](recipes/video/04-ltx25-pro6000-three-worker/) | LTX 2.5 I2V · ComfyUI 3-worker | RTX PRO 6000 Blackwell × 1 | 2026-08-29 | 직렬 4.992개/분, 3-worker 4.895개/분 |
 
 새 레시피는 [레시피 작성 규칙](docs/recipe-format.md)에 맞춰 추가합니다. 모델 파일과 대용량 생성 결과는 저장소에 포함하지 않습니다.
 
@@ -28,7 +31,10 @@ cd omg-runpod-media/recipes/video/01-minimax-h3-realtime
 ├── recipes/
 │   ├── image/                 # 이미지 생성·편집 레시피
 │   └── video/                 # 영상 생성·편집 레시피
-│       └── 01-minimax-h3-realtime/
+│       ├── 01-minimax-h3-realtime/
+│       ├── 02-minimax-h3-1440p/
+│       ├── 03-ltx25-resolution-benchmark/
+│       └── 04-ltx25-pro6000-three-worker/
 ├── docs/
 │   └── recipe-format.md       # 새 레시피가 지켜야 할 공통 형식
 ├── .gitignore

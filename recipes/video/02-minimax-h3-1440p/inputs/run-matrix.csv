@@ -1,0 +1,11 @@
+run_id,phase,configuration_label,prompt_id,seed,requested_width,requested_height,requested_duration_seconds,requested_fps,requested_frames,include_in_aggregate
+cold-r01-768x448,cold_start,768x448 Turbo 8 cold,P01,424242,768,448,5,24,124,false
+warmup-r01-768x448,warmup,768x448 Turbo 8 warmup,P01,424243,768,448,5,24,124,false
+warm-r01-768x448,warm,768x448 Turbo 8,P01,424251,768,448,5,24,124,true
+warm-r02-768x448,warm,768x448 Turbo 8,P01,424252,768,448,5,24,124,true
+warm-r03-768x448,warm,768x448 Turbo 8,P01,424253,768,448,5,24,124,true
+pilot-r01-1920x1088,quality,1920x1088 Turbo 8 exploratory,P01,424261,1920,1088,5,24,124,false
+pilot-r01-2560x1440,quality,2560x1440 Turbo 8 exploratory,P01,424271,2560,1440,5,24,124,false
+quality-P02-768x448,quality,768x448 Turbo 8 skateboard,P02,515151,768,448,5,24,124,false
+quality-P03-768x448,quality,768x448 Turbo 8 product text,P03,626262,768,448,5,24,124,false
+quality-P04-768x448,quality,768x448 Turbo 8 Korean dialogue,P04,737373,768,448,5,24,124,false

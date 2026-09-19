@@ -1,0 +1,32 @@
+run_id,phase,round,configuration_label,prompt_id,seed,requested_width,requested_height,requested_frames,requested_fps,steps,include_in_aggregate,purpose
+cold-p01-832x448,cold_start,0,832x448,P01,424242,832,448,121,24,8,false,cold-start evidence
+warmup-p01-832x448,warmup,0,832x448,P01,424242,832,448,121,24,8,false,resolution-specific warm-up
+warmup-p01-1280x704,warmup,0,1280x704,P01,424242,1280,704,121,24,8,false,resolution-specific warm-up
+warmup-p01-1984x1088,warmup,0,1984x1088,P01,424242,1984,1088,121,24,8,false,resolution-specific warm-up
+warmup2-p01-832x448,warmup,0,832x448,P01,424242,832,448,121,24,8,false,warm-up stability check
+warmup2-p01-1280x704,warmup,0,1280x704,P01,424242,1280,704,121,24,8,false,warm-up stability check
+warmup2-p01-1984x1088,warmup,0,1984x1088,P01,424242,1984,1088,121,24,8,false,warm-up stability check
+warm-r01-832x448,warm,1,832x448,P01,424243,832,448,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r01-1280x704,warm,1,1280x704,P01,424243,1280,704,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r01-1984x1088,warm,1,1984x1088,P01,424243,1984,1088,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r02-1984x1088,warm,2,1984x1088,P01,424244,1984,1088,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r02-832x448,warm,2,832x448,P01,424244,832,448,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r02-1280x704,warm,2,1280x704,P01,424244,1280,704,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r03-1280x704,warm,3,1280x704,P01,424245,1280,704,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r03-1984x1088,warm,3,1984x1088,P01,424245,1984,1088,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r03-832x448,warm,3,832x448,P01,424245,832,448,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r04-832x448,warm,4,832x448,P01,424246,832,448,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r04-1984x1088,warm,4,1984x1088,P01,424246,1984,1088,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r04-1280x704,warm,4,1280x704,P01,424246,1280,704,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r05-1280x704,warm,5,1280x704,P01,424247,1280,704,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r05-832x448,warm,5,832x448,P01,424247,832,448,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+warm-r05-1984x1088,warm,5,1984x1088,P01,424247,1984,1088,121,24,8,true,performance; seed varies by repeat to invalidate sampler cache
+quality-p02-832x448,quality,0,832x448,P02,515151,832,448,121,24,8,false,quality comparison
+quality-p02-1280x704,quality,0,1280x704,P02,515151,1280,704,121,24,8,false,quality comparison
+quality-p02-1984x1088,quality,0,1984x1088,P02,515151,1984,1088,121,24,8,false,quality comparison
+quality-p03-832x448,quality,0,832x448,P03,626262,832,448,121,24,8,false,quality comparison
+quality-p03-1280x704,quality,0,1280x704,P03,626262,1280,704,121,24,8,false,quality comparison
+quality-p03-1984x1088,quality,0,1984x1088,P03,626262,1984,1088,121,24,8,false,quality comparison
+quality-p04-832x448,quality,0,832x448,P04,737373,832,448,121,24,8,false,quality comparison if native audio enabled
+quality-p04-1280x704,quality,0,1280x704,P04,737373,1280,704,121,24,8,false,quality comparison if native audio enabled
+quality-p04-1984x1088,quality,0,1984x1088,P04,737373,1984,1088,121,24,8,false,quality comparison if native audio enabled

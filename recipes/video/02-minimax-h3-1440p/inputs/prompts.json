@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "prompts": [
+    {
+      "prompt_id": "P01",
+      "category": "fixed performance baseline",
+      "prompt": "A single continuous cinematic shot inside a quiet modern coffee shop at sunrise. A barista in a dark green apron slowly pours steamed milk into a ceramic cup, forming a clear leaf-shaped latte art pattern. The camera makes a gentle left-to-right dolly move while warm sunlight passes through light steam. Natural hand motion, stable face and clothing, realistic liquid physics, no cuts. Subtle espresso-machine ambience and ceramic cup sounds if native audio is enabled.",
+      "negative_prompt": "cuts, jump cuts, duplicate hands, extra fingers, warped cup, changing clothes, flicker, unstable background, subtitles, watermark",
+      "seed": 424242,
+      "reference_inputs": [],
+      "intended_failure_mode": "baseline motion, identity stability, liquid physics, camera adherence, and native audio continuity",
+      "notes": "Use unchanged for all speed repetitions and resolutions. Shared with the LTX 2.5 experiment for later cross-model inspection."
+    },
+    {
+      "prompt_id": "P02",
+      "category": "fast human motion",
+      "prompt": "One continuous low-angle tracking shot of a skateboarder in a bright yellow jacket riding through a wet neon-lit alley at night, performing one clean kickflip and landing while the camera tracks alongside. Reflections move consistently across the pavement, body proportions remain stable, and the jacket stays yellow. No cuts. Natural wheel and landing sounds if native audio is enabled.",
+      "negative_prompt": "cuts, slow motion, duplicated limbs, changing jacket color, floating skateboard, teleporting, flicker, subtitles, watermark",
+      "seed": 515151,
+      "reference_inputs": [],
+      "intended_failure_mode": "rapid articulated motion, contact physics, tracking camera, and temporal consistency",
+      "notes": "Quality matrix prompt."
+    },
+    {
+      "prompt_id": "P03",
+      "category": "product geometry and text",
+      "prompt": "A premium red metal GPU sits on a black studio pedestal beside a small white card printed with the exact words OH MY GPU. A slow 180-degree camera orbit reveals brushed metal texture, cooling fins, and crisp reflections while the product geometry and printed words remain unchanged. One continuous shot, soft controlled studio lighting, no cuts.",
+      "negative_prompt": "misspelled text, changing letters, warped product, extra fans, logo mutation, camera jump, flicker, subtitles, watermark",
+      "seed": 626262,
+      "reference_inputs": [],
+      "intended_failure_mode": "rigid geometry, fine detail, reflection stability, and text persistence",
+      "notes": "Quality matrix prompt."
+    },
+    {
+      "prompt_id": "P04",
+      "category": "dialogue and audiovisual alignment",
+      "prompt": "A medium close-up, single continuous shot of a Korean woman standing in a small recording studio. She looks into the camera and clearly says in Korean, '오늘 테스트는 여기까지입니다.' Her lip movement matches the sentence, her face remains stable, and she makes one small natural hand gesture. Clean studio voice with faint room ambience, no music, no cuts.",
+      "negative_prompt": "subtitles, on-screen text, face change, lip desynchronization, duplicate hands, background change, camera cut, music, watermark",
+      "seed": 737373,
+      "reference_inputs": [],
+      "intended_failure_mode": "Korean speech intelligibility, lip sync, face identity, hand integrity, and native audio",
+      "notes": "Native-audio quality prompt."
+    }
+  ],
+  "recommended_fields": [
+    "prompt_id",
+    "category",
+    "prompt",
+    "negative_prompt",
+    "seed",
+    "reference_inputs",
+    "intended_failure_mode",
+    "notes"
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "captured_at": "2026-08-29T16:10:00Z",
+  "status": "validated",
+  "workload": {
+    "model": "Lightricks/LTX-2.5 22B distilled Comfy INT8 ConvRot",
+    "model_revision": "bf86adedf518142442575d1ce2e767b7d01c8c76",
+    "mode": "I2V",
+    "width": 832,
+    "height": 448,
+    "frames": 121,
+    "fps": 24,
+    "output_duration_seconds": 5.041667,
+    "sampling_steps": 8,
+    "prompt_enhancer": false,
+    "input_sha256": "599d7b114e8633cf77497c874807ae0665245a662c56aa9d0dd2cdeed60a283d"
+  },
+  "environment": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_memory_mib": 97887,
+    "host_cuda": "13.2",
+    "pytorch": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "comfyui": "0.34.0",
+    "comfyui_commit": "e7051b03758a1247e3adb84a5b784ffacb9a23bd",
+    "hourly_rate_usd": 2.09,
+    "pod_final_status": "EXITED"
+  },
+  "runtime_image": {
+    "tag": "wlsdml1114/engui_comfy:cu130-comfy034-ltx25-v4-sage220-sm120",
+    "digest": "wlsdml1114/engui_comfy@sha256:ef37e9680c9772889ca66c3a0895c7d6db0fccbcb5e70e7ef8b63bcd440708da",
+    "sageattention": "2.2.0",
+    "sageattention_commit": "eb615cf6cf4d221338033340ee2de1c37fbdba4a",
+    "target": "sm_120",
+    "wheel_sha256": "385ddd37d542b7b37daebbcfab3b28a341e6f45cd090dbae00bdae9809538395",
+    "runtime_contains_nvcc": false,
+    "registry_pull_smoke": "passed",
+    "pro6000_generation_smoke": "passed"
+  },
+  "pytorch_single_warm": {
+    "run_ids": [
+      "pytorch-cache-ram-single-warm-r01",
+      "pytorch-cache-ram-single-warm-r02",
+      "pytorch-cache-ram-single-warm-r03"
+    ],
+    "wall_seconds": [12.176, 12.363, 11.521],
+    "wall_mean_seconds": 12.02,
+    "wall_sample_stdev_seconds": 0.442146,
+    "comfy_execution_seconds": [10.582, 10.751, 10.487],
+    "comfy_mean_seconds": 10.606667,
+    "serial_throughput_clips_per_minute": 4.991681
+  },
+  "pytorch_three_concurrent": {
+    "run_ids": [
+      "pytorch-cache-ram-concurrent-b01",
+      "pytorch-cache-ram-concurrent-b02",
+      "pytorch-cache-ram-concurrent-b03"
+    ],
+    "batch_wall_seconds": [34.455, 33.19, 42.676],
+    "batch_wall_mean_seconds": 36.773667,
+    "batch_wall_sample_stdev_seconds": 5.150554,
+    "aggregate_throughput_clips_per_minute": 4.894807,
+    "mean_per_job_comfy_seconds": 33.976889,
+    "peak_vram_used_mib": [97243, 96299, 96171],
+    "minimum_vram_free_mib": [9, 953, 1081],
+    "peak_power_w": [494.33, 506.99, 504.27]
+  },
+  "sage_single_warm": {
+    "run_ids": ["sage-single-r02", "sage-single-r03", "sage-single-r04"],
+    "wall_seconds": [12.507, 12.6, 12.795],
+    "wall_mean_seconds": 12.634,
+    "comfy_execution_seconds": [10.785, 11.17, 11.837],
+    "comfy_mean_seconds": 11.264,
+    "delta_vs_pytorch_wall_percent": 5.108153,
+    "delta_vs_pytorch_comfy_percent": 6.19736
+  },
+  "sage_three_concurrent": {
+    "run_ids": ["sage-concurrent-b01", "sage-concurrent-b02", "sage-concurrent-b03"],
+    "batch_wall_seconds": [32.202, 36.212, 39.851],
+    "batch_wall_mean_seconds": 36.088333,
+    "aggregate_throughput_clips_per_minute": 4.987762,
+    "delta_vs_pytorch_throughput_percent": 1.899053,
+    "peak_vram_used_mib": [97227, 96203, 96171],
+    "minimum_vram_free_mib": [25, 1049, 1081],
+    "peak_power_w": [487.6, 484.32, 484.63]
+  },
+  "quality_ab": [
+    {"seed": 610001, "psnr_db": 27.196156, "ssim": 0.910756},
+    {"seed": 610002, "psnr_db": 27.19712, "ssim": 0.919675},
+    {"seed": 610003, "psnr_db": 32.52812, "ssim": 0.959006}
+  ],
+  "prebuilt_image_gpu_smoke": {
+    "run_id": "sage-prebuilt-image-smoke-r01",
+    "classification": "cold_generation_smoke_not_performance_sample",
+    "seed": 610003,
+    "wall_seconds": 71.025,
+    "comfy_execution_seconds": 69.28,
+    "output_sha256": "5589ec403f7659af31dd2071e5b707caa0d4cae10942c499aef4b4cf21cf0891",
+    "output": "832x448, 121 frames, 24fps, 5.041667s, H.264 plus AAC",
+    "same_seed_vs_live_sage_psnr_db": 47.527406,
+    "same_seed_vs_live_sage_ssim": 0.992158
+  },
+  "rtx_5090_reference": {
+    "hourly_rate_usd": 0.99,
+    "warm_comfy_mean_seconds": 16.703,
+    "warm_wall_seconds": [18.095, 20.805],
+    "warm_wall_mean_seconds": 19.45,
+    "wall_throughput_clips_per_minute": 3.084833,
+    "estimated_gpu_cost_per_100_clips_usd": 0.534875
+  },
+  "comparison": {
+    "pro6000_single_wall_time_reduction_vs_5090_percent": 38.200514,
+    "pro6000_single_throughput_gain_vs_5090_percent": 61.813644,
+    "pro6000_single_estimated_gpu_cost_per_100_clips_usd": 0.697828,
+    "pro6000_three_worker_estimated_gpu_cost_per_100_clips_usd": 0.711639,
+    "pro6000_three_worker_throughput_delta_vs_pro6000_serial_percent": -1.9407
+  },
+  "billing": {
+    "estimated_gpu_uptime_hours": 0.981944,
+    "estimated_gpu_session_cost_usd": 2.052264,
+    "qualification": "Estimate from observed start/stop timestamps. The billing endpoint had not yet posted GPU charges for this pod when queried. Persistent disk billing is separate."
+  },
+  "excluded_runs": [
+    {
+      "ids": [
+        "pytorch-single-r01",
+        "pytorch-stage-w1-r01",
+        "pytorch-stage-w2-r01",
+        "pytorch-concurrent-b01",
+        "pytorch-single-warm-r02"
+      ],
+      "reason": "Initial --cache-none configuration disabled the intermediate RAM cache and is not comparable to the RTX 5090 cell. Preserved as diagnostic evidence."
+    },
+    {
+      "ids": ["sage-single-r01", "sage-prebuilt-image-smoke-r01"],
+      "reason": "Cold model or kernel initialization; used only as startup/smoke evidence."
+    }
+  ]
+}
