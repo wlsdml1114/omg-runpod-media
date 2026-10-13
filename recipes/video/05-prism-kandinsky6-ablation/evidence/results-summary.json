@@ -1,0 +1,111 @@
+{
+ "date": "2026-10-13",
+ "gpu": "NVIDIA H100 80GB HBM3 (SXM), Runpod Secure Cloud",
+ "image": "runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404",
+ "seed": 42001,
+ "runs_per_setting": 1,
+ "boundaries": {
+  "per_clip_seconds": "Prism: text/VAE encode + transformer to GPU + denoise + decode + save (load excluded). K6: pipe() call + VSR (load, SR load and SR warmup excluded)",
+  "denoise_seconds": "first transformer forward -> last forward return",
+  "model_load_seconds": "C runs share one batch load; A2s/A4 reuse A2 process weights"
+ },
+ "k6_sr_fixed_costs_seconds": {
+  "sr_load": 194,
+  "sr_kernel_warmup_and_vae_compile": 1065
+ },
+ "note": "K0 (K6 Pro 50-step 432p+VSR) and B1 (K6 Pro 720p direct) were skipped on H100 for budget.",
+ "runs": [
+  {
+   "label": "A0",
+   "status": "ok",
+   "model_load_seconds": 1180.71,
+   "per_clip_seconds": 2111.8,
+   "denoise_seconds": 1940.36,
+   "denoise_seconds_per_step": 38.81,
+   "post_denoise_decode_seconds": 41.8,
+   "max_memory_allocated_bytes": 65499358720
+  },
+  {
+   "label": "A2",
+   "status": "ok",
+   "model_load_seconds": 965.4,
+   "per_clip_seconds": 2121.63,
+   "denoise_seconds": 1983.77,
+   "denoise_seconds_per_step": 39.68,
+   "post_denoise_decode_seconds": 35.46,
+   "max_memory_allocated_bytes": 65499358720
+  },
+  {
+   "label": "A2s",
+   "status": "ok",
+   "model_load_seconds": 0.17,
+   "per_clip_seconds": 1977.54,
+   "denoise_seconds": 1903.99,
+   "denoise_seconds_per_step": 38.08,
+   "post_denoise_decode_seconds": 30.14,
+   "max_memory_allocated_bytes": 65499422720
+  },
+  {
+   "label": "A4",
+   "status": "ok",
+   "model_load_seconds": 0.24,
+   "per_clip_seconds": 1324.33,
+   "denoise_seconds": 1259.79,
+   "denoise_seconds_per_step": 25.2,
+   "post_denoise_decode_seconds": 28.68,
+   "max_memory_allocated_bytes": 65499422720
+  },
+  {
+   "label": "B1",
+   "status": "skipped_budget"
+  },
+  {
+   "label": "C1",
+   "status": "sr_ok",
+   "model_load_seconds": 897.25,
+   "per_clip_seconds": 193.21,
+   "denoise_seconds": 71.32,
+   "denoise_seconds_per_step": 7.13,
+   "video_decode_seconds": 15.39,
+   "sr_seconds": 74.55,
+   "max_memory_allocated_bytes": 78051410944
+  },
+  {
+   "label": "C1s",
+   "status": "sr_ok",
+   "model_load_seconds": 897.25,
+   "per_clip_seconds": 141.45,
+   "denoise_seconds": 69.57,
+   "denoise_seconds_per_step": 6.96,
+   "video_decode_seconds": 11.07,
+   "sr_seconds": 53.64,
+   "max_memory_allocated_bytes": 78092551168
+  },
+  {
+   "label": "C2",
+   "status": "sr_ok",
+   "model_load_seconds": 897.25,
+   "per_clip_seconds": 148.07,
+   "denoise_seconds": 69.68,
+   "denoise_seconds_per_step": 6.97,
+   "video_decode_seconds": 10.14,
+   "sr_seconds": 58.64,
+   "max_memory_allocated_bytes": 78092557312
+  },
+  {
+   "label": "C3",
+   "status": "sr_ok",
+   "model_load_seconds": 897.25,
+   "per_clip_seconds": 175.73,
+   "denoise_seconds": 69.84,
+   "denoise_seconds_per_step": 6.98,
+   "video_decode_seconds": 10.91,
+   "sr_seconds": 59.11,
+   "max_memory_allocated_bytes": 78092551680
+  },
+  {
+   "label": "K0",
+   "status": "skipped_budget"
+  }
+ ]
+}
