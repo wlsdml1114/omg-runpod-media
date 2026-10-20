@@ -1,0 +1,209 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  }
+ },
+ "2": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+   "type": "minimax",
+   "device": "default"
+  }
+ },
+ "3": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_video_vae_int8_convrot.safetensors"
+  }
+ },
+ "4": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+  }
+ },
+ "5": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "identity.png"
+  }
+ },
+ "6": {
+  "class_type": "LoadVideo",
+  "inputs": {
+   "file": "source.mp4"
+  }
+ },
+ "7": {
+  "class_type": "GetVideoComponents",
+  "inputs": {
+   "video": [
+    "6",
+    0
+   ]
+  }
+ },
+ "8": {
+  "class_type": "MiniMaxH3ReferenceToVideo",
+  "inputs": {
+   "clip": [
+    "2",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ],
+   "audio_vae": [
+    "4",
+    0
+   ],
+   "prompt": "<Video 1> is the source shot to edit. <Picture 1> is the replacement adult person's identity reference. Edit this existing continuous shot. Preserve the original camera, scene, background, lighting, framing, timing, gaze, head movement, body pose, hand gestures and every held or background object. Use <Picture 1> for the replacement person only; its background must not enter the output. Match the new person to the source lighting and head angle. No added text, cuts or camera moves. Replace the facial identity and hairstyle with the person in <Picture 1>. Remove the original facial hair. Keep the original clothes, body pose, arms and hands. Do not leave the original hair silhouette behind the replacement head. <Audio 1> is the synchronized soundtrack of <Video 1>. Preserve its spoken words, language, voice, speaking rhythm, pauses and soundscape. Preserve the source mouth articulation and precise opening/closing timing while replacing the identity. Do not invent dialogue or music.\nAdditional instruction: Preserve the original spoken delivery, mouth motion, pauses, gaze and microphone gestures. Keep the white polo shirt and original spacecraft interior. Replace only the face and hair with the fictional adult woman in the identity reference.",
+   "width": 1344,
+   "height": 768,
+   "length": 124,
+   "ref_image_size": "match",
+   "ref_images.ref_image_0": [
+    "5",
+    0
+   ],
+   "ref_videos.ref_video_0": [
+    "7",
+    0
+   ],
+   "ref_video_audios.ref_video_audio_0": [
+    "7",
+    1
+   ]
+  }
+ },
+ "9": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 42001
+  }
+ },
+ "10": {
+  "class_type": "BasicGuider",
+  "inputs": {
+   "model": [
+    "18",
+    0
+   ],
+   "conditioning": [
+    "8",
+    0
+   ]
+  }
+ },
+ "11": {
+  "class_type": "KSamplerSelect",
+  "inputs": {
+   "sampler_name": "res_multistep"
+  }
+ },
+ "12": {
+  "class_type": "BasicScheduler",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "scheduler": "simple",
+   "steps": 4,
+   "denoise": 1.0
+  }
+ },
+ "13": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "9",
+    0
+   ],
+   "guider": [
+    "10",
+    0
+   ],
+   "sampler": [
+    "11",
+    0
+   ],
+   "sigmas": [
+    "12",
+    0
+   ],
+   "latent_image": [
+    "8",
+    1
+   ]
+  }
+ },
+ "14": {
+  "class_type": "VAEDecode",
+  "inputs": {
+   "samples": [
+    "13",
+    0
+   ],
+   "vae": [
+    "3",
+    0
+   ]
+  }
+ },
+ "15": {
+  "class_type": "VAEDecodeAudio",
+  "inputs": {
+   "samples": [
+    "13",
+    0
+   ],
+   "vae": [
+    "4",
+    0
+   ]
+  }
+ },
+ "16": {
+  "class_type": "CreateVideo",
+  "inputs": {
+   "images": [
+    "14",
+    0
+   ],
+   "audio": [
+    "15",
+    0
+   ],
+   "fps": 24.0
+  }
+ },
+ "17": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "16",
+    0
+   ],
+   "filename_prefix": "h3-turbo4",
+   "format": "mp4",
+   "format.codec": "h264"
+  }
+ },
+ "18": {
+  "class_type": "LoraLoaderModelOnly",
+  "inputs": {
+   "model": [
+    "1",
+    0
+   ],
+   "lora_name": "minimax_h3_ref2v_turbo_4step_v0.1_comfyui_bf16.safetensors",
+   "strength_model": 1.0
+  }
+ }
+}
