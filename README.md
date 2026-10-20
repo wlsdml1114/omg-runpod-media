@@ -13,6 +13,7 @@ OhMyGPU의 Runpod 기반 이미지·영상 생성 실습 자료입니다. 모델
 | 03 | 영상 | [LTX 2.5 해상도별 생성 시간 측정](recipes/video/03-ltx25-resolution-benchmark/) | LTX 2.5 T2V · ComfyUI | RTX PRO 6000 Blackwell × 1 | 2026-08-18 | 832×448~1984×1088, 각 5회 warm 중앙값 |
 | 04 | 영상 | [RTX PRO 6000 한 장에 ComfyUI 3개 띄우기](recipes/video/04-ltx25-pro6000-three-worker/) | LTX 2.5 I2V · ComfyUI 3-worker | RTX PRO 6000 Blackwell × 1 | 2026-08-29 | 직렬 4.992개/분, 3-worker 4.895개/분 |
 | 05 | 영상 | [Prism·Kandinsky 6 속도 기법을 하나씩 켜고 끄기](recipes/video/05-prism-kandinsky6-ablation/) | Prism Alpha · Kandinsky 6 Pro-distill + VSR | H100 80GB SXM × 1 | 2026-10-13 | Prism sparsity 0.93 디노이즈 −36%, K6 distill 디노이즈 약 70초 (720p 5초, 각 1회) |
+| 06 | 영상 | [같은 H3 워크플로를 Comfy API와 Runpod Serverless에 올려 비교하기](recipes/video/06-comfy-api-vs-runpod-h3/) | MiniMax H3 Ref2VA Turbo4 · Comfy API · Runpod Serverless | RTX PRO 6000 Blackwell × 1 | 2026-10-19 | warm 중앙값 Comfy API 165.1초 vs Runpod 196.3초, cold 191–419초 (각 warm 5회·cold 3회) |
 
 새 레시피는 [레시피 작성 규칙](docs/recipe-format.md)에 맞춰 추가합니다. 모델 파일과 대용량 생성 결과는 저장소에 포함하지 않습니다.
 
@@ -36,7 +37,8 @@ cd omg-runpod-media/recipes/video/01-minimax-h3-realtime
 │       ├── 02-minimax-h3-1440p/
 │       ├── 03-ltx25-resolution-benchmark/
 │       ├── 04-ltx25-pro6000-three-worker/
-│       └── 05-prism-kandinsky6-ablation/
+│       ├── 05-prism-kandinsky6-ablation/
+│       └── 06-comfy-api-vs-runpod-h3/
 ├── docs/
 │   └── recipe-format.md       # 새 레시피가 지켜야 할 공통 형식
 ├── .gitignore
