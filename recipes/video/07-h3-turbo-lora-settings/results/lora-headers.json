@@ -1,0 +1,82 @@
+{
+ "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors": {
+  "tensors": 624,
+  "pairs": 208,
+  "params": 978059472,
+  "ranks": {
+   "128": 156,
+   "384": 52
+  },
+  "modules": {
+   "diffusion_model.blocks.N.attn.out_proj": 50,
+   "diffusion_model.blocks.N.attn.qkv_proj": 50,
+   "diffusion_model.blocks.N.mlp.fcN": 100,
+   "diffusion_model.token_refiner.blocks.N.attn.out_proj": 2,
+   "diffusion_model.token_refiner.blocks.N.attn.qkv_proj": 2,
+   "diffusion_model.token_refiner.blocks.N.mlp.fcN": 4
+  },
+  "metadata": {
+   "swi_glu_mapping": "Diffusers [value;gate] -> ComfyUI [gate;value]",
+   "training_rank": "128",
+   "target_format": "ComfyUI generic LoRA",
+   "training_alpha": "128.0",
+   "training_scale": "1.0",
+   "format": "pt",
+   "base_model": "Comfy-Org/MiniMax-H3 minimax_h3_fl2va_bf16.safetensors",
+   "qkv_fusion": "block diagonal B; concat A; alpha multiplied by 3",
+   "source_format": "Diffusers PEFT LoRA"
+  },
+  "keys_sample": [
+   "diffusion_model.blocks.0.attn.out_proj.alpha",
+   "diffusion_model.blocks.0.attn.qkv_proj.alpha",
+   "diffusion_model.blocks.0.mlp.fc1.alpha",
+   "diffusion_model.blocks.0.mlp.fc2.alpha",
+   "diffusion_model.blocks.1.attn.out_proj.alpha",
+   "diffusion_model.blocks.1.attn.qkv_proj.alpha",
+   "diffusion_model.blocks.1.mlp.fc1.alpha",
+   "diffusion_model.blocks.1.mlp.fc2.alpha",
+   "diffusion_model.blocks.10.attn.out_proj.alpha",
+   "diffusion_model.blocks.10.attn.qkv_proj.alpha"
+  ]
+ },
+ "minimax_h3_fl2v_turbo_4step_v1.2_768p_comfyui_bf16.safetensors": {
+  "tensors": 624,
+  "pairs": 208,
+  "params": 978059472,
+  "ranks": {
+   "128": 156,
+   "384": 52
+  },
+  "modules": {
+   "diffusion_model.blocks.N.attn.out_proj": 50,
+   "diffusion_model.blocks.N.attn.qkv_proj": 50,
+   "diffusion_model.blocks.N.mlp.fcN": 100,
+   "diffusion_model.token_refiner.blocks.N.attn.out_proj": 2,
+   "diffusion_model.token_refiner.blocks.N.attn.qkv_proj": 2,
+   "diffusion_model.token_refiner.blocks.N.mlp.fcN": 4
+  },
+  "metadata": {
+   "training_scale": "0.0625",
+   "qkv_fusion": "block diagonal B; concat A; alpha multiplied by 3",
+   "swi_glu_mapping": "Diffusers [value;gate] -> ComfyUI [gate;value]",
+   "training_rank": "128",
+   "target_format": "ComfyUI generic LoRA",
+   "source_format": "Diffusers PEFT LoRA",
+   "format": "pt",
+   "base_model": "Comfy-Org/MiniMax-H3 minimax_h3_fl2va_bf16.safetensors",
+   "training_alpha": "8.0"
+  },
+  "keys_sample": [
+   "diffusion_model.blocks.0.attn.out_proj.alpha",
+   "diffusion_model.blocks.0.attn.qkv_proj.alpha",
+   "diffusion_model.blocks.0.mlp.fc1.alpha",
+   "diffusion_model.blocks.0.mlp.fc2.alpha",
+   "diffusion_model.blocks.1.attn.out_proj.alpha",
+   "diffusion_model.blocks.1.attn.qkv_proj.alpha",
+   "diffusion_model.blocks.1.mlp.fc1.alpha",
+   "diffusion_model.blocks.1.mlp.fc2.alpha",
+   "diffusion_model.blocks.10.attn.out_proj.alpha",
+   "diffusion_model.blocks.10.attn.qkv_proj.alpha"
+  ]
+ }
+}
