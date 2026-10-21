@@ -1,0 +1,431 @@
+{
+ "gpu": "NVIDIA L40S 48GB x1 (Runpod Secure Cloud)",
+ "comfyui": "v0.42.0 (355cd6b14c92c19ac3188fe528e47a3f21ef5178)",
+ "torch": "2.9.1+cu130",
+ "date": "2026-10-19",
+ "measure": "POST /prompt -> output PNG saved, model already loaded unless first run of a session; each id run once",
+ "groups": {
+  "U-*": "round1 rerun, upsampler on, long prompts",
+  "P-*/F-*/C-*": "round1, upsampler OFF",
+  "T-*": "speed variants, upsampler OFF",
+  "R2-*": "round2, upsampler on, short prompts",
+  "UC-*": "chain test, upsampler on"
+ },
+ "runs": [
+  {
+   "run_id": "P-perfume-marble",
+   "status": "success",
+   "seconds_request_to_saved": 42.2
+  },
+  {
+   "run_id": "P-perfume-beach",
+   "status": "success",
+   "seconds_request_to_saved": 46.23
+  },
+  {
+   "run_id": "P-perfume-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 46.22
+  },
+  {
+   "run_id": "P-sneaker-marble",
+   "status": "success",
+   "seconds_request_to_saved": 45.07
+  },
+  {
+   "run_id": "P-sneaker-beach",
+   "status": "success",
+   "seconds_request_to_saved": 44.24
+  },
+  {
+   "run_id": "P-sneaker-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 44.28
+  },
+  {
+   "run_id": "P-mug-marble",
+   "status": "success",
+   "seconds_request_to_saved": 44.56
+  },
+  {
+   "run_id": "P-mug-beach",
+   "status": "success",
+   "seconds_request_to_saved": 44.21
+  },
+  {
+   "run_id": "P-mug-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 42.77
+  },
+  {
+   "run_id": "T-bf16-s16-mp4.0",
+   "status": "success",
+   "seconds_request_to_saved": 0.51
+  },
+  {
+   "run_id": "T-bf16-s8-mp4.0",
+   "status": "success",
+   "seconds_request_to_saved": 22.3
+  },
+  {
+   "run_id": "T-bf16-s4-mp4.0",
+   "status": "success",
+   "seconds_request_to_saved": 13.06
+  },
+  {
+   "run_id": "T-int8-s16-mp4.0",
+   "status": "success",
+   "seconds_request_to_saved": 23.44
+  },
+  {
+   "run_id": "T-bf16-s16-mp1.0",
+   "status": "success",
+   "seconds_request_to_saved": 16.74
+  },
+  {
+   "run_id": "T-base-s50-mp4.0",
+   "status": "success",
+   "seconds_request_to_saved": 237.47
+  },
+  {
+   "run_id": "C-orig-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 16.89
+  },
+  {
+   "run_id": "C-orig-park",
+   "status": "success",
+   "seconds_request_to_saved": 16.77
+  },
+  {
+   "run_id": "C-orig-profile",
+   "status": "success",
+   "seconds_request_to_saved": 16.57
+  },
+  {
+   "run_id": "C-orig-laugh",
+   "status": "success",
+   "seconds_request_to_saved": 16.84
+  },
+  {
+   "run_id": "C-orig-lowangle",
+   "status": "success",
+   "seconds_request_to_saved": 16.6
+  },
+  {
+   "run_id": "C-orig-back",
+   "status": "success",
+   "seconds_request_to_saved": 16.59
+  },
+  {
+   "run_id": "C-chain-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 0.51
+  },
+  {
+   "run_id": "C-chain-park",
+   "status": "success",
+   "seconds_request_to_saved": 16.49
+  },
+  {
+   "run_id": "C-chain-profile",
+   "status": "success",
+   "seconds_request_to_saved": 16.47
+  },
+  {
+   "run_id": "C-chain-laugh",
+   "status": "success",
+   "seconds_request_to_saved": 16.58
+  },
+  {
+   "run_id": "C-chain-lowangle",
+   "status": "success",
+   "seconds_request_to_saved": 16.59
+  },
+  {
+   "run_id": "C-chain-back",
+   "status": "success",
+   "seconds_request_to_saved": 16.67
+  },
+  {
+   "run_id": "U-P-perfume-marble",
+   "status": "success",
+   "seconds_request_to_saved": 54.91
+  },
+  {
+   "run_id": "U-P-perfume-beach",
+   "status": "success",
+   "seconds_request_to_saved": 47.36
+  },
+  {
+   "run_id": "U-P-perfume-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 48.05
+  },
+  {
+   "run_id": "U-P-sneaker-marble",
+   "status": "success",
+   "seconds_request_to_saved": 47.67
+  },
+  {
+   "run_id": "U-P-sneaker-beach",
+   "status": "success",
+   "seconds_request_to_saved": 47.83
+  },
+  {
+   "run_id": "U-P-sneaker-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 47.83
+  },
+  {
+   "run_id": "U-P-mug-marble",
+   "status": "success",
+   "seconds_request_to_saved": 47.16
+  },
+  {
+   "run_id": "U-P-mug-beach",
+   "status": "success",
+   "seconds_request_to_saved": 47.95
+  },
+  {
+   "run_id": "U-P-mug-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 48.21
+  },
+  {
+   "run_id": "U-F-scale",
+   "status": "success",
+   "seconds_request_to_saved": 47.93
+  },
+  {
+   "run_id": "U-C-orig-back",
+   "status": "success",
+   "seconds_request_to_saved": 25.24
+  },
+  {
+   "run_id": "R2-watch-desk",
+   "status": "success",
+   "seconds_request_to_saved": 56.05
+  },
+  {
+   "run_id": "R2-watch-wrist",
+   "status": "success",
+   "seconds_request_to_saved": 40.99
+  },
+  {
+   "run_id": "R2-watch-wrist-s7",
+   "status": "success",
+   "seconds_request_to_saved": 41.24
+  },
+  {
+   "run_id": "R2-watch-wrist-s2026",
+   "status": "success",
+   "seconds_request_to_saved": 41.31
+  },
+  {
+   "run_id": "R2-watch-studio",
+   "status": "success",
+   "seconds_request_to_saved": 50.8
+  },
+  {
+   "run_id": "R2-serum-studio",
+   "status": "success",
+   "seconds_request_to_saved": 51.85
+  },
+  {
+   "run_id": "R2-serum-hand",
+   "status": "success",
+   "seconds_request_to_saved": 41.45
+  },
+  {
+   "run_id": "R2-serum-desk",
+   "status": "success",
+   "seconds_request_to_saved": 51.63
+  },
+  {
+   "run_id": "R2-backpack-forest",
+   "status": "success",
+   "seconds_request_to_saved": 52.48
+  },
+  {
+   "run_id": "R2-backpack-worn",
+   "status": "success",
+   "seconds_request_to_saved": 52.49
+  },
+  {
+   "run_id": "R2-headphones-desk",
+   "status": "success",
+   "seconds_request_to_saved": 51.96
+  },
+  {
+   "run_id": "R2-headphones-studio",
+   "status": "success",
+   "seconds_request_to_saved": 51.58
+  },
+  {
+   "run_id": "R2-chair-living",
+   "status": "success",
+   "seconds_request_to_saved": 52.25
+  },
+  {
+   "run_id": "R2-chair-living-s7",
+   "status": "success",
+   "seconds_request_to_saved": 51.78
+  },
+  {
+   "run_id": "R2-chair-living-s2026",
+   "status": "success",
+   "seconds_request_to_saved": 52.07
+  },
+  {
+   "run_id": "R2-multi-studio",
+   "status": "success",
+   "seconds_request_to_saved": 63.05
+  },
+  {
+   "run_id": "R2-C2-man-cook",
+   "status": "success",
+   "seconds_request_to_saved": 25.13
+  },
+  {
+   "run_id": "R2-C2-man-bike",
+   "status": "success",
+   "seconds_request_to_saved": 25.49
+  },
+  {
+   "run_id": "R2-C2-man-train",
+   "status": "success",
+   "seconds_request_to_saved": 24.46
+  },
+  {
+   "run_id": "R2-C2-man-rain",
+   "status": "success",
+   "seconds_request_to_saved": 25.16
+  },
+  {
+   "run_id": "R2-C2-man-product",
+   "status": "success",
+   "seconds_request_to_saved": 32.68
+  },
+  {
+   "run_id": "R2-C2-woman-cook",
+   "status": "success",
+   "seconds_request_to_saved": 25.31
+  },
+  {
+   "run_id": "R2-C2-woman-bike",
+   "status": "success",
+   "seconds_request_to_saved": 25.21
+  },
+  {
+   "run_id": "R2-C2-woman-train",
+   "status": "success",
+   "seconds_request_to_saved": 25.15
+  },
+  {
+   "run_id": "R2-C2-woman-rain",
+   "status": "success",
+   "seconds_request_to_saved": 25.33
+  },
+  {
+   "run_id": "R2-C2-woman-rain-s7",
+   "status": "success",
+   "seconds_request_to_saved": 25.64
+  },
+  {
+   "run_id": "R2-C2-woman-rain-s2026",
+   "status": "success",
+   "seconds_request_to_saved": 25.36
+  },
+  {
+   "run_id": "R2-C2-woman-product",
+   "status": "success",
+   "seconds_request_to_saved": 33.43
+  },
+  {
+   "run_id": "R2-pair-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 33.03
+  },
+  {
+   "run_id": "UC-A-orig-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 37.98
+  },
+  {
+   "run_id": "UC-A-orig-park",
+   "status": "success",
+   "seconds_request_to_saved": 23.29
+  },
+  {
+   "run_id": "UC-A-orig-profile",
+   "status": "success",
+   "seconds_request_to_saved": 23.94
+  },
+  {
+   "run_id": "UC-A-orig-laugh",
+   "status": "success",
+   "seconds_request_to_saved": 23.87
+  },
+  {
+   "run_id": "UC-A-orig-lowangle",
+   "status": "success",
+   "seconds_request_to_saved": 24.09
+  },
+  {
+   "run_id": "UC-A-orig-back",
+   "status": "success",
+   "seconds_request_to_saved": 24.42
+  },
+  {
+   "run_id": "UC-A-chain-cafe",
+   "status": "success",
+   "seconds_request_to_saved": 0.51
+  },
+  {
+   "run_id": "UC-A-chain-park",
+   "status": "success",
+   "seconds_request_to_saved": 24.51
+  },
+  {
+   "run_id": "UC-A-chain-profile",
+   "status": "success",
+   "seconds_request_to_saved": 24.43
+  },
+  {
+   "run_id": "UC-A-chain-laugh",
+   "status": "success",
+   "seconds_request_to_saved": 24.96
+  },
+  {
+   "run_id": "UC-A-chain-lowangle",
+   "status": "success",
+   "seconds_request_to_saved": 25.13
+  },
+  {
+   "run_id": "UC-A-chain-back",
+   "status": "success",
+   "seconds_request_to_saved": 25.15
+  },
+  {
+   "run_id": "UC-B-chain-cook",
+   "status": "success",
+   "seconds_request_to_saved": 24.52
+  },
+  {
+   "run_id": "UC-B-chain-bike",
+   "status": "success",
+   "seconds_request_to_saved": 26.14
+  },
+  {
+   "run_id": "UC-B-chain-train",
+   "status": "success",
+   "seconds_request_to_saved": 25.14
+  },
+  {
+   "run_id": "UC-B-chain-rain",
+   "status": "success",
+   "seconds_request_to_saved": 25.48
+  }
+ ]
+}
