@@ -20,11 +20,11 @@ Runpod warm-1은 cold-1과 다른 워커가 받아 54.5초를 기다렸습니다
 | --- | ---: | ---: | ---: |
 | Comfy API warm-3 | 133.4 (스텝당 33.34) | 25.3 | 158.7 |
 | Runpod US-NC-2, 같은 시드 재실행 | 132.7 (스텝당 33.18) | 35.3 | 168.0 |
-| Runpod US-MO-2, warm 중앙값 | 기록 없음 | 기록 없음 | 186.6 (핸들러 측정) |
+| Runpod US-MO-2, warm 중앙값 | 기록 없음 | 기록 없음 | 186.9 (핸들러 측정, 5회 중앙값) |
 
 - 샘플링은 사실상 같았습니다.
 - 약 9초(158.7 vs 168.0)는 샘플링 밖 구간에서 났습니다. 두 환경의 시작 로그에서 ComfyUI·comfy-kitchen·comfy-aimdo 버전, GPU, attention 설정은 같았고 torch만 달랐습니다. Runpod 쪽(torch 2.9.1)에만 `working around nvidia conv3d memory bug.`가 찍혔습니다. 영상 VAE가 conv3d를 쓰므로 가장 유력한 원인이지만, torch를 올려 다시 재지는 않았습니다.
-- 약 19초(168.0 vs 186.6)는 워커 차이입니다. 같은 이미지·시드에서 워커만 바뀌었습니다.
+- 약 19초(168.0 vs 186.9)는 워커 차이입니다. 같은 이미지·시드에서 워커만 바뀌었습니다.
 - Runpod 핸들러의 입력 준비·비교본 MP4·base64 처리는 약 2초(`executionTime` 169.9 − ComfyUI 168.0)였습니다.
 
 ## 비용
