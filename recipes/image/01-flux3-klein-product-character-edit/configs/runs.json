@@ -1,0 +1,338 @@
+{
+ "note": "Round 2 and chain settings used on 2026-10-19 (L40S). All edits: distilled bf16, 16 steps, euler/simple, CFG 1, prompt upsampler on, seed 42 unless listed.",
+ "materials": [
+  {
+   "id": "C-woman",
+   "w": 832,
+   "h": 1216,
+   "prompt": "Photorealistic portrait photograph of a fictional Korean woman in her late twenties, shoulder-length black hair with a small side part, a small mole under her left eye, wearing a mustard-yellow knit cardigan over a white t-shirt and a thin silver necklace. Front-facing, neutral soft expression, plain light gray studio background, soft daylight, upper body visible, sharp focus.",
+   "seed": 7
+  },
+  {
+   "id": "M2-watch",
+   "w": 1024,
+   "h": 1024,
+   "prompt": "Studio product photograph of a men's stainless steel wristwatch lying flat on a seamless pure white background, round brushed steel case, white dial with thin black hour markers and the small black text \"ORBIT\" above \"AUTOMATIC\" near the top of the dial, brown leather strap. Even soft lighting, sharp focus, centered.",
+   "seed": 7
+  },
+  {
+   "id": "M2-serum",
+   "w": 1024,
+   "h": 1024,
+   "prompt": "Studio product photograph of a small amber glass dropper bottle with a black rubber bulb on a seamless pure white background. A matte white label reads \"SOLENE\" in black capitals, below it \"Niacinamide 10% + Zinc 1%\" and at the bottom \"30 ml / 1 fl oz\" in tiny type. Even soft lighting, sharp focus, centered.",
+   "seed": 7
+  },
+  {
+   "id": "M2-backpack",
+   "w": 1024,
+   "h": 1024,
+   "prompt": "Studio product photograph of a navy blue waxed canvas backpack with brown leather straps and buckles, front pocket with a small rectangular leather patch embossed with the word \"TRAILCO\", seamless pure white background, front view, even soft lighting, sharp focus.",
+   "seed": 7
+  },
+  {
+   "id": "M2-headphones",
+   "w": 1024,
+   "h": 1024,
+   "prompt": "Studio product photograph of matte black over-ear wireless headphones with a thin brushed silver headband slider and a small silver circle logo on each ear cup, seamless pure white background, three-quarter view, even soft lighting, sharp focus.",
+   "seed": 7
+  },
+  {
+   "id": "M2-chair",
+   "w": 1024,
+   "h": 1024,
+   "prompt": "Studio product photograph of a mid-century modern lounge armchair with mustard yellow boucle fabric upholstery, walnut wood frame and tapered legs, seamless pure white background, three-quarter view, even soft lighting, sharp focus.",
+   "seed": 7
+  },
+  {
+   "id": "S2-desk",
+   "w": 1344,
+   "h": 768,
+   "prompt": "Light wooden desk by a window seen at a slight downward angle, an open silver laptop on the left, a closed notebook and a pen on the right, a ceramic mug of coffee near the back, clean empty space in the center of the desk, soft daylight, photorealistic photograph.",
+   "seed": 7
+  },
+  {
+   "id": "S2-studio",
+   "w": 1344,
+   "h": 768,
+   "prompt": "Minimal product photography set with a pastel pink seamless backdrop and a round white cylindrical podium in the center, soft diffused studio lighting, empty podium top, photorealistic photograph.",
+   "seed": 7
+  },
+  {
+   "id": "S2-living",
+   "w": 1344,
+   "h": 768,
+   "prompt": "Empty corner of a bright Scandinavian living room, light oak floor, white walls, a tall window with sheer curtains on the left, a small potted fiddle leaf fig in the corner, empty floor space in the center, soft daylight, photorealistic interior photograph, eye-level.",
+   "seed": 7
+  },
+  {
+   "id": "S2-forest",
+   "w": 1344,
+   "h": 768,
+   "prompt": "Large flat mossy rock in a misty pine forest in the morning, soft light rays through the trees, empty top surface of the rock in the center foreground, photorealistic photograph.",
+   "seed": 7
+  },
+  {
+   "id": "C2-man",
+   "w": 832,
+   "h": 1216,
+   "prompt": "Photorealistic portrait photograph of a fictional Black man in his early thirties with short dreadlocks, a neatly trimmed short beard, a small round silver earring in his left ear, wearing an olive green bomber jacket over a gray hoodie. Front-facing, calm friendly expression, plain light gray studio background, soft daylight, upper body visible, sharp focus.",
+   "seed": 7
+  },
+  {
+   "id": "C2-woman",
+   "w": 832,
+   "h": 1216,
+   "prompt": "Photorealistic portrait photograph of a fictional woman in her early sixties with a sleek silver-gray bob haircut and red rectangular glasses, wearing a navy blue trench coat over a cream turtleneck and small pearl stud earrings. Front-facing, warm slight smile, plain light gray studio background, soft daylight, upper body visible, sharp focus.",
+   "seed": 7
+  }
+ ],
+ "products": [
+  {
+   "id": "R2-watch-desk",
+   "refs": [
+    "M2-watch",
+    "S2-desk"
+   ],
+   "prompt": "put the watch from the first image on the desk in the second image"
+  },
+  {
+   "id": "R2-watch-wrist",
+   "refs": [
+    "M2-watch"
+   ],
+   "prompt": "a close-up of a man's wrist wearing this watch, resting on a wooden table",
+   "seeds": [
+    42,
+    7,
+    2026
+   ]
+  },
+  {
+   "id": "R2-watch-studio",
+   "refs": [
+    "M2-watch",
+    "S2-studio"
+   ],
+   "prompt": "place the watch from the first image on the podium in the second image"
+  },
+  {
+   "id": "R2-serum-studio",
+   "refs": [
+    "M2-serum",
+    "S2-studio"
+   ],
+   "prompt": "place the bottle from the first image on the podium in the second image"
+  },
+  {
+   "id": "R2-serum-hand",
+   "refs": [
+    "M2-serum"
+   ],
+   "prompt": "a woman's hand holding this bottle up to the camera, bathroom background"
+  },
+  {
+   "id": "R2-serum-desk",
+   "refs": [
+    "M2-serum",
+    "S2-desk"
+   ],
+   "prompt": "put the bottle from the first image on the desk in the second image"
+  },
+  {
+   "id": "R2-backpack-forest",
+   "refs": [
+    "M2-backpack",
+    "S2-forest"
+   ],
+   "prompt": "put the backpack from the first image on the rock in the second image"
+  },
+  {
+   "id": "R2-backpack-worn",
+   "refs": [
+    "M2-backpack",
+    "C2-man"
+   ],
+   "prompt": "the man from the second image hiking on a mountain trail wearing the backpack from the first image, seen from behind at a slight angle"
+  },
+  {
+   "id": "R2-headphones-desk",
+   "refs": [
+    "M2-headphones",
+    "S2-desk"
+   ],
+   "prompt": "put the headphones from the first image on the desk in the second image"
+  },
+  {
+   "id": "R2-headphones-studio",
+   "refs": [
+    "M2-headphones",
+    "S2-studio"
+   ],
+   "prompt": "place the headphones from the first image on the podium in the second image"
+  },
+  {
+   "id": "R2-chair-living",
+   "refs": [
+    "M2-chair",
+    "S2-living"
+   ],
+   "prompt": "place the armchair from the first image in the living room in the second image",
+   "seeds": [
+    42,
+    7,
+    2026
+   ]
+  },
+  {
+   "id": "R2-multi-studio",
+   "refs": [
+    "M2-serum",
+    "M2-watch",
+    "S2-studio"
+   ],
+   "prompt": "place the bottle from the first image and the watch from the second image together on the podium in the third image"
+  }
+ ],
+ "people": [
+  {
+   "id": "R2-C2-man-cook",
+   "refs": [
+    "C2-man"
+   ],
+   "prompt": "the man from the first image cooking pasta in a home kitchen, stirring a pot, medium shot"
+  },
+  {
+   "id": "R2-C2-man-bike",
+   "refs": [
+    "C2-man"
+   ],
+   "prompt": "the man from the first image riding a bicycle through a busy city street, full body, motion"
+  },
+  {
+   "id": "R2-C2-man-train",
+   "refs": [
+    "C2-man"
+   ],
+   "prompt": "the man from the first image in side profile reading a book by the window on a train"
+  },
+  {
+   "id": "R2-C2-man-rain",
+   "refs": [
+    "C2-man"
+   ],
+   "prompt": "the man from the first image walking away in the rain holding a black umbrella, seen from behind, looking back over his shoulder"
+  },
+  {
+   "id": "R2-C2-man-product",
+   "refs": [
+    "C2-man",
+    "M2-serum"
+   ],
+   "prompt": "the man from the first image holding the dropper bottle from the second image up next to his face and smiling at the camera"
+  },
+  {
+   "id": "R2-C2-woman-cook",
+   "refs": [
+    "C2-woman"
+   ],
+   "prompt": "the woman from the first image cooking pasta in a home kitchen, stirring a pot, medium shot"
+  },
+  {
+   "id": "R2-C2-woman-bike",
+   "refs": [
+    "C2-woman"
+   ],
+   "prompt": "the woman from the first image riding a bicycle through a busy city street, full body, motion"
+  },
+  {
+   "id": "R2-C2-woman-train",
+   "refs": [
+    "C2-woman"
+   ],
+   "prompt": "the woman from the first image in side profile reading a book by the window on a train"
+  },
+  {
+   "id": "R2-C2-woman-rain",
+   "refs": [
+    "C2-woman"
+   ],
+   "prompt": "the woman from the first image walking away in the rain holding a black umbrella, seen from behind, looking back over her shoulder",
+   "seeds": [
+    42,
+    7,
+    2026
+   ]
+  },
+  {
+   "id": "R2-C2-woman-product",
+   "refs": [
+    "C2-woman",
+    "M2-serum"
+   ],
+   "prompt": "the woman from the first image holding the dropper bottle from the second image up next to her face and smiling at the camera"
+  },
+  {
+   "id": "R2-pair-cafe",
+   "refs": [
+    "C2-man",
+    "C2-woman"
+   ],
+   "prompt": "the man from the first image and the woman from the second image laughing together at a cafe table"
+  }
+ ],
+ "chain": [
+  {
+   "id": "UC-B-chain",
+   "person": "C2-woman",
+   "scenes": [
+    {
+     "id": "cook",
+     "prompt": "the woman from the first image cooking pasta in a home kitchen, stirring a pot, medium shot"
+    },
+    {
+     "id": "bike",
+     "prompt": "the woman from the first image riding a bicycle through a busy city street, full body, motion"
+    },
+    {
+     "id": "train",
+     "prompt": "the woman from the first image in side profile reading a book by the window on a train"
+    },
+    {
+     "id": "rain",
+     "prompt": "the woman from the first image walking away in the rain holding a black umbrella, seen from behind, looking back over her shoulder"
+    }
+   ]
+  },
+  {
+   "id": "UC-A",
+   "person": "C-woman",
+   "also_original": true,
+   "scenes": [
+    {
+     "id": "cafe",
+     "prompt": "the woman from the first image sitting at a cafe window table holding a cup of coffee with both hands, smiling slightly, warm afternoon light, medium shot"
+    },
+    {
+     "id": "park",
+     "prompt": "the woman from the first image jogging along a tree-lined park path in the morning, full body, motion, soft sunlight"
+    },
+    {
+     "id": "profile",
+     "prompt": "the woman from the first image in strict side profile facing right, looking out over a city skyline at dusk from a rooftop, close-up"
+    },
+    {
+     "id": "laugh",
+     "prompt": "the woman from the first image laughing out loud with eyes squeezed shut at a crowded street market at night, neon lights, close-up"
+    },
+    {
+     "id": "lowangle",
+     "prompt": "the woman from the first image seen from an extreme low angle from the ground, standing on a subway platform looking down at the camera, wide-angle lens"
+    },
+    {
+     "id": "back",
+     "prompt": "the woman from the first image walking away on a snowy street, seen from behind, turning her head back over her shoulder toward the camera, falling snow"
+    }
+   ]
+  }
+ ]
+}

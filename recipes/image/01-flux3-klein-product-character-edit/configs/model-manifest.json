@@ -1,0 +1,38 @@
+{
+  "repo": "black-forest-labs/flux-3-image-klein-comfy",
+  "revision": "feef60b0aaf63a4773ace96636ebbcf43b881312",
+  "gated": true,
+  "license": "FLUX Kommunity License v1.0",
+  "files": [
+    {
+      "path": "diffusion_models/flux3-image-klein-bf16.safetensors",
+      "size": 11097404512,
+      "sha256": "c3e9813cdd049c831c836b2e9db61150e49a93fc1a4c63b256494642fee0bd7c",
+      "comfy_dir": "diffusion_models"
+    },
+    {
+      "path": "diffusion_models/flux3-image-klein-int8-convrot.safetensors",
+      "size": 5827874779,
+      "sha256": "847d8933548afd93df4af2cac2498e70891bf28d9dae06d695f536992e168fe2",
+      "comfy_dir": "diffusion_models"
+    },
+    {
+      "path": "text_encoders/qwen3.5_9b_flux3_prompt_upsampler_bf16.safetensors",
+      "size": 18819722392,
+      "sha256": "f5062a1fba3e63afe5c88349a311903fec06c959b362f1247127e63d5c860ed4",
+      "comfy_dir": "text_encoders"
+    },
+    {
+      "path": "text_encoders/qwen3vl_4b_bf16.safetensors",
+      "size": 8875719408,
+      "sha256": "f0b24fc5c8d7c0ea6ca909da14c20af5cac53f22506be942c6c956f838b9630f",
+      "comfy_dir": "text_encoders"
+    },
+    {
+      "path": "vae/flux2-vae.safetensors",
+      "size": 336211292,
+      "sha256": "868fe7b343cc8f3a19dbcfcafbc3d5f888802be3f89bd81b65b3621a066ce8f3",
+      "comfy_dir": "vae"
+    }
+  ]
+}
