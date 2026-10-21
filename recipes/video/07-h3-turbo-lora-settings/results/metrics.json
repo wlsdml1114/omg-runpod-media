@@ -1,0 +1,252 @@
+{
+ "E1-base-20st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.0255135297775269,
+  "drift_from_first": 7.832228660583496,
+  "face_sharpness_lapvar": 870.1230049133301,
+  "audio_rms": 0.27322062849998474,
+  "audio_spectral_flatness": 0.23046042823082474,
+  "audio_hf_ratio_4k": 0.03267626506652542
+ },
+ "E1-base-4st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 0.8725699782371521,
+  "drift_from_first": 6.472766876220703,
+  "face_sharpness_lapvar": 666.3703727722168,
+  "audio_rms": 0.2639811635017395,
+  "audio_spectral_flatness": 0.20753729546064184,
+  "audio_hf_ratio_4k": 0.047962951912805404
+ },
+ "E1-v10_4-4st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.608056664466858,
+  "drift_from_first": 10.16901683807373,
+  "face_sharpness_lapvar": 960.2151184082031,
+  "audio_rms": 0.27713796496391296,
+  "audio_spectral_flatness": 0.21413556048058852,
+  "audio_hf_ratio_4k": 0.059478747123507744
+ },
+ "E2-v10_4-2st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.3308883905410767,
+  "drift_from_first": 10.489765167236328,
+  "face_sharpness_lapvar": 1027.468650817871,
+  "audio_rms": 0.24525757133960724,
+  "audio_spectral_flatness": 0.2683501924206558,
+  "audio_hf_ratio_4k": 0.06256156201157295
+ },
+ "E2-v10_4-8st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.6461068391799927,
+  "drift_from_first": 10.56544303894043,
+  "face_sharpness_lapvar": 1156.9138107299805,
+  "audio_rms": 0.2813866436481476,
+  "audio_spectral_flatness": 0.1514859596536286,
+  "audio_hf_ratio_4k": 0.03958019246550368
+ },
+ "E2-v10_8-4st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.2175852060317993,
+  "drift_from_first": 8.564075469970703,
+  "face_sharpness_lapvar": 662.6442565917969,
+  "audio_rms": 0.28153538703918457,
+  "audio_spectral_flatness": 0.19983065512761852,
+  "audio_hf_ratio_4k": 0.05925056267918785
+ },
+ "E2-v10_8-8st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.2585537433624268,
+  "drift_from_first": 9.150293350219727,
+  "face_sharpness_lapvar": 753.9507217407227,
+  "audio_rms": 0.27252861857414246,
+  "audio_spectral_flatness": 0.1822171493082509,
+  "audio_hf_ratio_4k": 0.041256069056514175
+ },
+ "E3-v10_4-4st-w025-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.0270459651947021,
+  "drift_from_first": 7.530256748199463,
+  "face_sharpness_lapvar": 648.398265838623,
+  "audio_rms": 0.2798875570297241,
+  "audio_spectral_flatness": 0.19785249973312977,
+  "audio_hf_ratio_4k": 0.055328250392954054
+ },
+ "E3-v10_4-4st-w050-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.2006889581680298,
+  "drift_from_first": 8.623766899108887,
+  "face_sharpness_lapvar": 699.4675827026367,
+  "audio_rms": 0.2758319079875946,
+  "audio_spectral_flatness": 0.17023300887516735,
+  "audio_hf_ratio_4k": 0.07117340566067608
+ },
+ "E3-v10_4-4st-w075-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.319741129875183,
+  "drift_from_first": 8.046425819396973,
+  "face_sharpness_lapvar": 814.0200157165527,
+  "audio_rms": 0.2784164249897003,
+  "audio_spectral_flatness": 0.1956234299455829,
+  "audio_hf_ratio_4k": 0.09017139642741828
+ },
+ "E4-base-20st-s42002": {
+  "frames": 124,
+  "motion_mean_abs_diff": 0.915011465549469,
+  "drift_from_first": 9.512855529785156,
+  "face_sharpness_lapvar": 968.2695808410645,
+  "audio_rms": 0.28180330991744995,
+  "audio_spectral_flatness": 0.2927300859513538,
+  "audio_hf_ratio_4k": 0.02417091867925242
+ },
+ "E4-base-20st-s42003": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.1851005554199219,
+  "drift_from_first": 13.168403625488281,
+  "face_sharpness_lapvar": 978.6072387695312,
+  "audio_rms": 0.25958317518234253,
+  "audio_spectral_flatness": 0.1719296348492614,
+  "audio_hf_ratio_4k": 0.02243501442053195
+ },
+ "E4-base-20st-s42004": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.0484343767166138,
+  "drift_from_first": 7.578261375427246,
+  "face_sharpness_lapvar": 869.8131828308105,
+  "audio_rms": 0.2804649770259857,
+  "audio_spectral_flatness": 0.17698763289549888,
+  "audio_hf_ratio_4k": 0.03263661648492084
+ },
+ "E4-v10_4-4st-s42002": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.3123419284820557,
+  "drift_from_first": 9.488228797912598,
+  "face_sharpness_lapvar": 1052.7490921020508,
+  "audio_rms": 0.2758616507053375,
+  "audio_spectral_flatness": 0.27415523542900766,
+  "audio_hf_ratio_4k": 0.09134251770181037
+ },
+ "E4-v10_4-4st-s42003": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.568490743637085,
+  "drift_from_first": 11.135458946228027,
+  "face_sharpness_lapvar": 993.6499557495117,
+  "audio_rms": 0.26516616344451904,
+  "audio_spectral_flatness": 0.17224236408431765,
+  "audio_hf_ratio_4k": 0.043117509845679435
+ },
+ "E4-v10_4-4st-s42004": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.4091057777404785,
+  "drift_from_first": 10.351973533630371,
+  "face_sharpness_lapvar": 962.9862670898438,
+  "audio_rms": 0.27679264545440674,
+  "audio_spectral_flatness": 0.1465731802045347,
+  "audio_hf_ratio_4k": 0.05280506184861174
+ },
+ "E6-v11_4-4st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.5571919679641724,
+  "drift_from_first": 10.281587600708008,
+  "face_sharpness_lapvar": 981.1304397583008,
+  "audio_rms": 0.2815781235694885,
+  "audio_spectral_flatness": 0.22014174565747852,
+  "audio_hf_ratio_4k": 0.07760526414171628
+ },
+ "E6-v12_4-4st-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.1827555894851685,
+  "drift_from_first": 8.57226848602295,
+  "face_sharpness_lapvar": 696.9519653320312,
+  "audio_rms": 0.2789124548435211,
+  "audio_spectral_flatness": 0.18632062938956892,
+  "audio_hf_ratio_4k": 0.05991337425159164
+ },
+ "R-v10_4-4st-er_sde-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.556607723236084,
+  "drift_from_first": 10.78496265411377,
+  "face_sharpness_lapvar": 1024.1831016540527,
+  "audio_rms": 0.268373966217041,
+  "audio_spectral_flatness": 0.22754003984551263,
+  "audio_hf_ratio_4k": 0.033251932451304665
+ },
+ "R-v10_4-4st-er_sde-sh6-w075-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.1847251653671265,
+  "drift_from_first": 8.4132661819458,
+  "face_sharpness_lapvar": 868.5824546813965,
+  "audio_rms": 0.24355925619602203,
+  "audio_spectral_flatness": 0.3142608850058675,
+  "audio_hf_ratio_4k": 0.033828996920880525
+ },
+ "R-v10_4-4st-euler-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.4565969705581665,
+  "drift_from_first": 10.743172645568848,
+  "face_sharpness_lapvar": 1078.25532913208,
+  "audio_rms": 0.27768605947494507,
+  "audio_spectral_flatness": 0.27647371300033236,
+  "audio_hf_ratio_4k": 0.037127286838945624
+ },
+ "R-v10_4-4st-lcm-sh12-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.5255578756332397,
+  "drift_from_first": 10.78884506225586,
+  "face_sharpness_lapvar": 976.9223556518555,
+  "audio_rms": 0.26502206921577454,
+  "audio_spectral_flatness": 0.25102141626914126,
+  "audio_hf_ratio_4k": 0.03623583479245494
+ },
+ "R-v10_4-4st-lcm-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.6223475933074951,
+  "drift_from_first": 10.807583808898926,
+  "face_sharpness_lapvar": 1015.911003112793,
+  "audio_rms": 0.27491500973701477,
+  "audio_spectral_flatness": 0.22069826112127203,
+  "audio_hf_ratio_4k": 0.03662939354821204
+ },
+ "R-v10_4-4st-res_multistep-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.6702476739883423,
+  "drift_from_first": 11.355944633483887,
+  "face_sharpness_lapvar": 1134.8679962158203,
+  "audio_rms": 0.274456262588501,
+  "audio_spectral_flatness": 0.22393202811934482,
+  "audio_hf_ratio_4k": 0.04602856449328142
+ },
+ "R-v12_4-4st-er_sde-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.1941617727279663,
+  "drift_from_first": 10.153229713439941,
+  "face_sharpness_lapvar": 773.2754173278809,
+  "audio_rms": 0.2428990751504898,
+  "audio_spectral_flatness": 0.30670725546578825,
+  "audio_hf_ratio_4k": 0.03819238996412646
+ },
+ "R-v12_4-4st-lcm-sh6-s42001": {
+  "frames": 124,
+  "motion_mean_abs_diff": 1.1770342588424683,
+  "drift_from_first": 10.14492416381836,
+  "face_sharpness_lapvar": 763.1217308044434,
+  "audio_rms": 0.2447146326303482,
+  "audio_spectral_flatness": 0.2871287657637605,
+  "audio_hf_ratio_4k": 0.04732570197070878
+ },
+ "_seed_diversity": {
+  "base20_pairwise_mean_abs_diff": 10.283523559570312,
+  "turbo4_pairwise_mean_abs_diff": 9.312582015991211,
+  "base_runs": [
+   "E1-base-20st-s42001",
+   "E4-base-20st-s42002",
+   "E4-base-20st-s42003",
+   "E4-base-20st-s42004"
+  ],
+  "turbo_runs": [
+   "E1-v10_4-4st-s42001",
+   "E4-v10_4-4st-s42002",
+   "E4-v10_4-4st-s42003",
+   "E4-v10_4-4st-s42004"
+  ]
+ }
+}
