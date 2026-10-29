@@ -1,0 +1,6 @@
+runs/
+runs.jsonl
+inputs/*.mp4
+inputs/*.png
+results/endpoints.json
+results/*-pod.json

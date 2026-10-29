@@ -1,0 +1,25 @@
+== llm s0
+  cold-1: COMPLETED delay 268.883 exec 0.477 dc US-NE-1 weights [1.37] modelload [157.5] forced=True
+  cold-2: COMPLETED delay 179.026 exec 0.373 dc US-NC-2 weights [1.23] modelload [12.1] forced=False
+  cold-3: COMPLETED delay 326.73 exec 0.419 dc US-NE-1 weights [3.24] modelload [157.3] forced=False
+  warm n=9 ok=9 delay [0.13, 0.13, 0.13, 0.13, 0.13, 0.14, 0.14, 0.14, 0.19] exec [0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.5] median exec 0.4
+== llm s1
+  cold-1: COMPLETED delay 206.011 exec 0.393 dc EU-RO-1 weights [52.68] modelload [55.8] forced=False
+  cold-2: client_error delay None exec None dc None weights [] modelload [] forced=False
+  cold-3: COMPLETED delay 150.535 exec 0.393 dc EU-RO-1 weights [52.34] modelload [55.3] forced=True
+  cold-2b: COMPLETED delay 156.575 exec 0.408 dc EU-RO-1 weights [56.81] modelload [60.0] forced=False
+  warm n=9 ok=9 delay [0.09, 0.09, 0.09, 0.09, 0.09, 0.09, 0.09, 0.1, 34.91] exec [0.3, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4] median exec 0.4
+== llm s2
+  cold-1: COMPLETED delay 461.266 exec 0.409 dc US-PA-1 weights [280.47] modelload [284.8] forced=False
+  cold-2: COMPLETED delay 342.299 exec 0.421 dc US-PA-1 weights [168.43] modelload [172.4] forced=False
+  cold-3: COMPLETED delay 375.629 exec 0.431 dc US-PA-1 weights [236.73] modelload [241.4] forced=False
+  warm n=9 ok=9 delay [0.12, 0.13, 0.13, 0.13, 0.13, 0.14, 0.14, 0.14, 0.14] exec [0.3, 0.3, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4] median exec 0.4
+== video s1
+  cold-1: COMPLETED delay 79.969 exec 171.496 dc EU-RO-1 hash [68.3] MB/s 682.2 forced=True
+  cold-2: COMPLETED delay 61.9 exec 240.249 dc EU-RO-1 hash [51.3] MB/s 906.8 forced=True
+  cold-3: COMPLETED delay 129.18 exec 189.641 dc EU-RO-1 hash [45.5] MB/s 1023.4 forced=False
+  warm n=6 ok=6 delay [0.14, 0.14, 0.14, 0.15, 0.15, 0.15] exec [169.5, 169.9, 187.7, 191.5, 195.5, 197.8] median exec 189.6
+== video s2
+  cold-1: COMPLETED delay 1443.388 exec 780.213 dc EU-RO-1 hash [272.2] MB/s 171.1 forced=False
+  cold-2: FAILED delay 347.776 exec 1502.629 dc EU-RO-1 hash [332.8] MB/s 139.9 forced=False
+  warm n=2 ok=2 delay [0.15, 264.74] exec [205.8, 852.9] median exec 529.4
