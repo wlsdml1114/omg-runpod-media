@@ -16,6 +16,7 @@ OhMyGPU의 Runpod 기반 이미지·영상 생성 실습 자료입니다. 모델
 | 06 | 영상 | [같은 H3 워크플로를 Comfy API와 Runpod Serverless에 올려 비교하기](recipes/video/06-comfy-api-vs-runpod-h3/) | MiniMax H3 Ref2VA Turbo4 · Comfy API · Runpod Serverless | RTX PRO 6000 Blackwell × 1 | 2026-10-19 | warm 중앙값 Comfy API 165.1초 vs Runpod 196.3초, cold 191–419초 (각 warm 5회·cold 3회) |
 | 07 | 영상 | [H3 Turbo LoRA를 켜고 끄며 학습 조건(step·shift·샘플러) 확인하기](recipes/video/07-h3-turbo-lora-settings/) | MiniMax H3 FL2VA · Turbo LoRA (lightx2v) · ComfyUI | RTX PRO 6000 Blackwell × 1 | 2026-10-17 | 20 step 192초 → Turbo 4 step 47초. 768p LoRA는 shift 6/3 + er_sde + 강도 0.75에서만 판정 통과 (각 1회) |
 | 01 | 이미지 | [FLUX 3 Klein으로 상품 사진 합성하고 같은 인물로 여러 장면 만들기](recipes/image/01-flux3-klein-product-character-edit/) | FLUX 3 Image Klein distilled · ComfyUI · 프롬프트 업샘플러 | L40S 48GB × 1 | 2026-10-19 | 참조 2장 → 4MP 상품 편집 50.8–52.5초, 인물 2MP 23.3–26.1초 (업샘플러 포함, 각 1회) |
+| 01 | 스토리지 | [Runpod 글로벌 볼륨과 네트워크 볼륨의 모델 로딩 속도 비교하기](recipes/storage/01-global-volume-vs-network-volume/) | Global Volume (베타) · Network Volume · vLLM · MiniMax H3 | RTX PRO 6000 Blackwell × 1 (Serverless) | 2026-10-22 | 같은 EU-RO-1 첫 읽기 1,066 vs 179MB/s, LLM cold 대기 151–206초 vs 342–461초 (각 3회) |
 
 새 레시피는 [레시피 작성 규칙](docs/recipe-format.md)에 맞춰 추가합니다. 모델 파일과 대용량 생성 결과는 저장소에 포함하지 않습니다.
 
@@ -35,6 +36,8 @@ cd omg-runpod-media/recipes/video/01-minimax-h3-realtime
 ├── recipes/
 │   ├── image/                 # 이미지 생성·편집 레시피
 │   │   └── 01-flux3-klein-product-character-edit/
+│   ├── storage/               # 볼륨·모델 저장 방식 비교 레시피
+│   │   └── 01-global-volume-vs-network-volume/
 │   └── video/                 # 영상 생성·편집 레시피
 │       ├── 01-minimax-h3-realtime/
 │       ├── 02-minimax-h3-1440p/
