@@ -1,0 +1,5 @@
+# voice recordings and generated audio stay out of git
+ref/
+out/
+runs.jsonl
+*.wav

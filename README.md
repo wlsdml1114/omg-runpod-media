@@ -1,6 +1,6 @@
 # OMG Runpod Media
 
-OhMyGPU의 Runpod 기반 이미지·영상 생성 실습 자료입니다. 모델을 한 번 실행해 보는 데서 끝내지 않고, 사용한 GPU와 워크플로, 측정 방법, 결과의 한계를 함께 남겨 같은 조건에서 다시 확인할 수 있는 레시피로 관리합니다.
+OhMyGPU의 Runpod 기반 이미지·영상·음성 생성 실습 자료입니다. 모델을 한 번 실행해 보는 데서 끝내지 않고, 사용한 GPU와 워크플로, 측정 방법, 결과의 한계를 함께 남겨 같은 조건에서 다시 확인할 수 있는 레시피로 관리합니다.
 
 > 이 저장소는 OhMyGPU가 운영하는 커뮤니티 튜토리얼입니다. Runpod, 모델 개발사 또는 ComfyUI의 공식 제품 저장소가 아닙니다.
 
@@ -17,6 +17,7 @@ OhMyGPU의 Runpod 기반 이미지·영상 생성 실습 자료입니다. 모델
 | 07 | 영상 | [H3 Turbo LoRA를 켜고 끄며 학습 조건(step·shift·샘플러) 확인하기](recipes/video/07-h3-turbo-lora-settings/) | MiniMax H3 FL2VA · Turbo LoRA (lightx2v) · ComfyUI | RTX PRO 6000 Blackwell × 1 | 2026-10-17 | 20 step 192초 → Turbo 4 step 47초. 768p LoRA는 shift 6/3 + er_sde + 강도 0.75에서만 판정 통과 (각 1회) |
 | 01 | 이미지 | [FLUX 3 Klein으로 상품 사진 합성하고 같은 인물로 여러 장면 만들기](recipes/image/01-flux3-klein-product-character-edit/) | FLUX 3 Image Klein distilled · ComfyUI · 프롬프트 업샘플러 | L40S 48GB × 1 | 2026-10-19 | 참조 2장 → 4MP 상품 편집 50.8–52.5초, 인물 2MP 23.3–26.1초 (업샘플러 포함, 각 1회) |
 | 01 | 스토리지 | [Runpod 글로벌 볼륨과 네트워크 볼륨의 모델 로딩 속도 비교하기](recipes/storage/01-global-volume-vs-network-volume/) | Global Volume (베타) · Network Volume · vLLM · MiniMax H3 | RTX PRO 6000 Blackwell × 1 (Serverless) | 2026-10-22 | 같은 EU-RO-1 첫 읽기 1,066 vs 179MB/s, LLM cold 대기 151–206초 vs 342–461초 (각 3회) |
+| 01 | 음성 | [Ming 3.0 TTS로 내 목소리를 한국어로 클론하기](recipes/audio/01-ming3-tts-korean-voice-clone/) | Ming-3.0-tts 0.5B · 참조 음성 13초 | RTX 4000 Ada 20GB × 1 (재검증 RTX 3090) | 2026-11-03 | 23문장 × 3회 69개, 문장당 생성 중앙값 5.9초, Pod 24분 약 $0.11. 목소리 닮음 95 (ElevenLabs v4 88, Gemini 3.8 Flash TTS 83) |
 
 새 레시피는 [레시피 작성 규칙](docs/recipe-format.md)에 맞춰 추가합니다. 모델 파일과 대용량 생성 결과는 저장소에 포함하지 않습니다.
 
@@ -34,6 +35,8 @@ cd omg-runpod-media/recipes/video/01-minimax-h3-realtime
 ```text
 .
 ├── recipes/
+│   ├── audio/                 # 음성 합성(TTS)·목소리 클론 레시피
+│   │   └── 01-ming3-tts-korean-voice-clone/
 │   ├── image/                 # 이미지 생성·편집 레시피
 │   │   └── 01-flux3-klein-product-character-edit/
 │   ├── storage/               # 볼륨·모델 저장 방식 비교 레시피
@@ -65,7 +68,7 @@ cd omg-runpod-media/recipes/video/01-minimax-h3-realtime
 
 | 저장소 | 다루는 내용 |
 | --- | --- |
-| **OMG Runpod Media** | 이미지·영상 생성, ComfyUI 워크플로, 생성 시간·VRAM·출력 검증 |
+| **OMG Runpod Media** | 이미지·영상·음성 생성, ComfyUI 워크플로, 생성 시간·VRAM·출력 검증 |
 | [OMG Runpod LLM](https://github.com/wlsdml1114/omg-runpod-llm) | Pod·Serverless 기반 오픈소스 LLM 배포와 서빙 |
 
 둘 다 특정 GPU의 결과를 모든 환경에 일반화하지 않습니다. GPU, 이미지, 드라이버, CUDA, 프레임 수, 모델 버전과 측정 구간을 함께 기록합니다.
