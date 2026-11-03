@@ -1,6 +1,6 @@
 # 06. 같은 MiniMax H3 워크플로를 Comfy API와 Runpod Serverless에 올려 비교하기
 
-- **상태:** 2026-10-19 실측으로 검증됨
+- **상태:** 2026-10-19 실측으로 검증됨, 2026-10-28 Runpod 쪽을 Comfy API와 같은 실행 환경으로 다시 측정함([재측정 결과](results/retest-2026-10-28.md))
 - **GPU:** NVIDIA RTX PRO 6000 Blackwell Server Edition 96GB × 1 (양쪽 동일)
 - **모델:** MiniMax H3 Ref2VA pruned INT8 ConvRot + Turbo4 Ref2V LoRA(4 step), Comfy-Org/MiniMax-H3
 - **출력:** 1344×768, 24 FPS, 124프레임(5.167초), H.264 + AAC 32kHz 스테레오
@@ -13,7 +13,7 @@ ComfyUI 워크플로 하나를 Comfy API(Comfy Org 관리형 배포)와 Runpod S
 | --- | --- | --- |
 | 배포 | Build → Release(linux/nvidia, cu130) → Deployment | Docker 이미지 → Queue Endpoint |
 | ComfyUI | 커밋 `5cc4b870` (0.41.0) | 커밋 `5cc4b870` (0.41.0) |
-| torch / Python | 2.12.1+cu130 / 3.12.13 | 2.9.1+cu130 / 3.10.19 |
+| torch / Python | 2.12.1+cu130 / 3.12.13 | 10-19: 2.9.1+cu130 / 3.10.19 → 10-28 재측정: 2.12.1+cu130 / 3.12.3 |
 | 워커 | min 0 / max 1, 유휴 30초(고정) | min 0 / max 1, 유휴 5초, FlashBoot |
 | 모델 위치 | Comfy network storage | 비공개 Hugging Face 캐시(Runpod 모델 캐시) |
 | 요청 방식 | v2 API, 입력은 assets 업로드 | `/run` + `/status`, 입력·출력 base64 |
@@ -90,11 +90,25 @@ warm을 각 cold 바로 뒤에 붙인 이유는 Runpod의 유휴 5초 때문입�
 - 같은 GPU의 시간당 단가는 Comfy API가 1.3배($4.54 vs $3.49)였고, warm 1건 계산값은 $0.203 vs $0.183, 다음 날 조회한 실제 청구 건당 평균은 $0.254(9건) vs $0.214(10건)였습니다.
 - 개별 실행값: [results/runs.csv](results/runs.csv)
 
+## 재측정 (2026-10-28, Runpod 실행 환경을 Comfy API와 맞춤)
+
+10-19 결과의 warm 차이가 torch 버전과 워커 호스트에서 왔는지 확인하려고, Runpod 이미지의 실행 환경을 Comfy API 시작 로그와 맞춰 다시 쟀습니다. Python 3.12, torch 2.12.1+cu130, ComfyUI 0.41.0, pytorch attention으로 바꿨고, GPU·워크플로·입력·시드·엔드포인트 설정·모델 캐시는 10-19와 같습니다.
+
+| 생성 시간 (warm 5회 중앙값) | 값 | Comfy API 대비 |
+| --- | ---: | ---: |
+| Comfy API (`started_at`→`completed_at`, 10-19) | 161.3초 | 기준 |
+| Runpod 10-19 (torch 2.9.1, `executionTime`) | 189.0초 | +27.7초 (+17%) |
+| **Runpod 10-28 (torch 2.12.1, `executionTime`)** | **165.1초** | **+3.8초 (+2%)** |
+
+- 실행 환경을 맞추자 차이가 약 4초로 줄었고, 그중 약 2초는 Runpod 핸들러의 입출력 처리입니다. 같은 GPU에서 생성 속도는 사실상 같습니다.
+- warm 1건 계산값: Runpod 165.1초 × $3.49/h ≈ **$0.160**, Comfy API 161.3초 × $4.54/h ≈ **$0.203** (약 27% 더).
+- 회차별 값과 조건: [results/retest-2026-10-28.md](results/retest-2026-10-28.md)
+
 ## 넓게 해석하면 안 되는 범위
 
 - 워크플로 하나, GPU 한 종류, 하루 저녁의 측정입니다. 다른 워크플로·시간대·리전에서 같은 차이가 난다고 볼 근거는 없습니다.
 - Runpod 쪽 warm 5회는 모두 한 워커(US-MO-2)가 처리했습니다. 같은 이미지를 다른 워커(US-NC-2)에서 돌리자 실행 시간이 약 19초 짧았습니다.
-- 약 9초의 ComfyUI 실행 차이는 torch 버전(2.9.1의 conv3d 우회)이 가장 유력한 원인이지만, torch를 올려 다시 재지는 않았습니다.
+- 10-19의 약 9초 ComfyUI 실행 차이는 torch 버전(2.9.1의 conv3d 우회)이 가장 유력한 원인으로 봤고, 10-28에 torch를 2.12.1로 올려 다시 재자 차이가 약 4초로 줄었습니다. 10-28 재측정 warm 5회는 한 리전(US-PA-1) 워커 2대가 처리했습니다.
 - cold 3회는 범위로만 읽어야 합니다. 어느 쪽 cold가 더 빠르다고 결론 내릴 수 없습니다.
 - Comfy API v2 응답에는 문서에 있는 `metrics.queue_ms`/`execution_ms`가 없었고, 상태 값은 실제 시작 전부터 `running`이었습니다(2026-10-19 기준). 그래서 타임스탬프로 계산합니다.
 
