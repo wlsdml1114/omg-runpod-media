@@ -8,7 +8,7 @@
 
 내 목소리 녹음 13초와 그 받아쓰기를 넣고, Ming 3.0 TTS 0.5B로 다른 한국어 문장을 읽게 만들어요. Ming은 **한국어 기본 목소리가 없어서**(기본 목소리와 텍스트로 목소리 만들기는 중국어·영어 전용) 한국어는 이렇게 참조 녹음을 따라 하는 방식으로만 쓸 수 있어요.
 
-Endplan 영상 [한국어 보이스 클론, 무료 vs 유료 비교 | Ming 3.0 · ElevenLabs · Gemini](https://www.youtube.com/watch?v=sKSwRBqimgg)에서 ElevenLabs v4, Gemini 3.8 Flash TTS와 비교할 때 쓴 설정이에요.
+Endplan 영상 [한국어 보이스 클론, 무료 vs 유료 비교 | Ming 3.0 · ElevenLabs · Gemini](https://www.youtube.com/watch?v=2zVxxjawhz8)에서 ElevenLabs v4, Gemini 3.8 Flash TTS와 비교할 때 쓴 설정이에요.
 
 ## 결과 요약
 
